@@ -3,17 +3,14 @@ var canvas = document.getElementById('canvas')
 
 var ctx = canvas.getContext('2d');
 
-var playerOne = new Player(5,5,50,50)
-// var playerOne = new Player(5,5,50,50)
-// var playerOne = new Player(5,5,50,50)
-// var playerOne = new Player(5,5,50,50)
-
-
 window.addEventListener("keydown", keyListener)
 setInterval(function() {
   playerOne.update()
+  playerTwo.update()
+  playerAI.update()
   playerOne.draw(ctx)
-
+  playerTwo.draw(ctx)
+  playerAI.draw(ctx)
   console.log('helooo')
 },
 1000/20)
@@ -35,9 +32,31 @@ function keyListener(e) {
       playerOne.direction = 'right'
       break
   }
+  switch (e.keyCode) {
+    case 87: // up
+      playerTwo.direction = 'W'
+      break
+      case 83: // down
+      playerTwo.direction = 'S'
+      break
+      case 65: // left
+      playerTwo.direction = 'A'
+      break
+      case 68: // right
+      PlayerTwo.direction = 'D'
+      break
+  }
 }
 
-if position < 800
-
-// direction 
-// if direction x is true then we will add x 
+checkCollision(){
+  for (var i = 0; i < coordinates.length; i++) {
+    var x = coordinates[i];
+    var y = coordinates[i+1];
+    } 
+  if (Player.position = coordinates) {
+          this.ctx.fillStyle = "red";
+          this.ctx.font = "30px serif";
+          this.ctx.fillText('GAME OVER'); 
+          this.ctx.fillText('SCORE: '+this.score); 
+  } return true
+}
