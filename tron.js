@@ -1,16 +1,24 @@
 
+
 var canvas = document.getElementById('canvas')
 
 var ctx = canvas.getContext('2d');
+
+var coordinates = [];
+
+var playerOne = new Player(5,5,50,50)
+var playerTwo = new Player(5,5,150,150,"#0095DD")
+
 
 window.addEventListener("keydown", keyListener)
 setInterval(function() {
   playerOne.update()
   playerTwo.update()
-  playerAI.update()
+  // playerAI.update()
   playerOne.draw(ctx)
   playerTwo.draw(ctx)
-  playerAI.draw(ctx)
+  // playerAI.draw(ctx)
+  checkCollision()
   console.log('helooo')
 },
 1000/20)
@@ -33,7 +41,7 @@ function keyListener(e) {
       break
   }
   switch (e.keyCode) {
-    case 87: // up
+      case 87: // up
       playerTwo.direction = 'W'
       break
       case 83: // down
@@ -43,20 +51,26 @@ function keyListener(e) {
       playerTwo.direction = 'A'
       break
       case 68: // right
-      PlayerTwo.direction = 'D'
+      playerTwo.direction = 'D'
       break
   }
-}
+ }
 
-checkCollision(){
-  for (var i = 0; i < coordinates.length; i++) {
-    var x = coordinates[i];
-    var y = coordinates[i+1];
+function checkCollision() {
+
+if(playerOne.coordinates.length < 3) return 
+
+
+  for (var i = 0; i < playerOne.coordinates.length; i++) {
+    var x = playerOne.coordinates[i][0];
+    var y = playerTwo.coordinates[i][0];
     } 
-  if (Player.position = coordinates) {
-          this.ctx.fillStyle = "red";
-          this.ctx.font = "30px serif";
-          this.ctx.fillText('GAME OVER'); 
-          this.ctx.fillText('SCORE: '+this.score); 
-  } return true
-}
+    if (
+            playerOne.coordinates === playerTwo.coordinates
+            // playerOne.coordinates[playerOne.coordinates.length] === playerTwo.coordinates[i] &&
+            // playerOne.coordinates[playerOne.coordinates.length] === playerOne.coordinates[i]
+    ) {
+      console.log('collision')
+    }
+    console.log('no colission')
+  }
