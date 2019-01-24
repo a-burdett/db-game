@@ -49,7 +49,6 @@ class Player {
     this.alive = true
     this.coordinates = []
     this.score = 0
-    this.colour = []
     // this.direction
     //this.img = new Image()
     //this.img.src = " // db train image"
@@ -58,7 +57,7 @@ class Player {
       ctx.save();
       ctx.translate(this.x,this.y)
       ctx.rotate(this.angle);
-      ctx.fillStyle(this.color)
+      ctx.fillStyle="#0095DD"
       ctx.fillRect(this.x, this.y, 3, 3);
       //ctx.drawImage(this.img,-this.width/2, 0, this.width,200)
       //ctx.drawImage(this.img,-this.width/2,-this.height/2,this.width,this.height)

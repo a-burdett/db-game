@@ -7,7 +7,7 @@ var ctx = canvas.getContext('2d');
 var coordinates = [];
 
 var playerOne = new Player(5,5,50,50)
-var playerTwo = new Player(5,5,150,150,"#0095DD")
+var playerTwo = new Player(5,5,150,150)
 
 
 window.addEventListener("keydown", keyListener)
