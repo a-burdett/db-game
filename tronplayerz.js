@@ -23,6 +23,7 @@
 //     ctx.restore()
 //    }
   
+//   }  
 //   function snakeAI(){
 //   var this.Snake = new Snake(5,5,300,300,1)
 //   var this.Snake.x = $(window).x() - 50; // two dim array
@@ -40,15 +41,16 @@
 
 class Player {
   constructor(width,height,initialX, initialY, speed) {
-    this.width = width
-    this.height = height
-    this.x = initialX // centre of the movement 
-    this.y = initialY // centre of the movement
-    this.speed = 1
-    this.direction = 'right'
-    this.alive = true
-    this.coordinates = []
-    this.score = 0
+    this.width = width;
+    this.height = height;
+    this.x = initialX; // centre of the movement 
+    this.y = initialY; // centre of the movement
+    this.speed = 1;
+    this.direction = 'right';
+    this.alive = true;
+    this.coordinates = [];
+    this.oldCoordinates = [];
+    this.score = 0;
     // this.direction
     //this.img = new Image()
     //this.img.src = " // db train image"
